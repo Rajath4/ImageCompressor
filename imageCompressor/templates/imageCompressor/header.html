@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    	{% load staticfiles %}
+      <!--Import Google Icon Font-->
+      <link href="{% static 'icons/icon.css' %}?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+    </head>
+
+    <body>
+
+	  <nav>
+	    <div class="nav-wrapper brown lighten-1">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/imageCompressor/">Home</a></li>
+      </ul>
+	      <a href="#!" class="brand-logo center">JPEG Image Compressor</a>
+	    </div>
+	  </nav>
+
+	  <div class="container">
+      <br><br>
+   		{% block content %}
+
+   		{% endblock %}
+
+   		{% load staticfiles %}
+      <br><br>
+   	</div>
+
+   	<footer class="page-footer brown lighten-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">JPEG Image compressor using Python</h5>
+            <p class="grey-text text-lighten-4">This website is used to compress JPEG images.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Developers</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/haripriyaaithal/">Haripriya S Aithal</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Rajath4">Rajath</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/unagendra">Nagendra U</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+      <div class="container">
+      </div>
+    </footer>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+  
+  </body>
+</html>
