@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 import os
 from imageCompressor.compressor import compressImage
-# Create your views here.
 
 def index(request):
 	#  Home page
@@ -15,7 +14,7 @@ def upload(request):
 		if not str(request.FILES['file']).endswith('jpg'):
 			return render(request, 'imageCompressor/error.html')
 
-		handleUploadedFile(request, request.FILES['file'], str(request.FILES['file']))
+		handleUploadedFile(request.FILES['file'], str(request.FILES['file']))
 		#  Rename the image file, so it becomes easier to refer
 		os.rename('imageCompressor/upload/' + str(request.FILES['file']), 'imageCompressor/upload/1.jpg')
 		#  Get this attribute from user
@@ -31,7 +30,7 @@ def upload(request):
 
 
 #  Function to move the file to upload directory
-def handleUploadedFile(request, file, filename):
+def handleUploadedFile(file, filename):
 		if not os.path.exists('imageCompressor/upload/'):
 			os.mkdir('imageCompressor/upload/')
 		with open('imageCompressor/upload/' + filename, 'wb+') as destination:
